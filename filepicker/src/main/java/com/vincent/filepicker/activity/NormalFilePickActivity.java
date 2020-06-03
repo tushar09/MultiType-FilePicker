@@ -74,8 +74,6 @@ public class NormalFilePickActivity extends BaseActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_file_pick);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.addItemDecoration(new DividerListItemDecoration(this,
-                LinearLayoutManager.VERTICAL, R.drawable.vw_divider_rv_file));
         mAdapter = new NormalFilePickAdapter(this, mMaxNumber);
         mRecyclerView.setAdapter(mAdapter);
 

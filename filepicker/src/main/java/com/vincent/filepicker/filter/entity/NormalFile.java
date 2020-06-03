@@ -11,6 +11,7 @@ import android.os.Parcelable;
 
 public class NormalFile extends BaseFile implements Parcelable {
     private String mimeType;
+    private boolean selected;
 
     public String getMimeType() {
         return mimeType;
@@ -59,4 +60,14 @@ public class NormalFile extends BaseFile implements Parcelable {
             return file;
         }
     };
+
+    @Override
+    public boolean isSelected() {
+        return selected;
+    }
+
+    @Override
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }

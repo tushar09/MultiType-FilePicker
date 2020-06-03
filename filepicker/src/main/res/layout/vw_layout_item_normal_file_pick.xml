@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp">
+    android:layout_marginTop="3dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/ic_file"
-        android:layout_width="?actionBarSize"
-        android:layout_height="60dp"
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="8dp"
+        android:id="@+id/ic_icon_holder"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/vw_ic_audio" />
+        android:layout_width="45dp"
+        android:layout_height="65dp">
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/ic_file"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/qwer" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_magnet" />
+    </androidx.cardview.widget.CardView>
+
 
     <ImageView
         android:id="@+id/cbx"
@@ -24,14 +40,16 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_centerVertical="true"
         android:layout_margin="10dp"
+        android:gravity="center|start"
         android:layout_toLeftOf="@id/cbx"
-        android:layout_toRightOf="@id/ic_file"
+        android:layout_toRightOf="@id/ic_icon_holder"
         android:orientation="vertical">
 
         <TextView
+            android:gravity="center|start"
             android:id="@+id/tv_file_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

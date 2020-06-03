@@ -45,13 +45,6 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
         final NormalFile file = mList.get(position);
 
         holder.mTvTitle.setText(Util.extractFileNameWithSuffix(file.getPath()));
-        holder.mTvTitle.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        if (holder.mTvTitle.getMeasuredWidth() >
-                Util.getScreenWidth(mContext) - Util.dip2px(mContext, 10 + 32 + 10 + 48 + 10 * 2)) {
-            holder.mTvTitle.setLines(2);
-        } else {
-            holder.mTvTitle.setLines(1);
-        }
 
         if (file.isSelected()) {
             holder.mCbx.setSelected(true);
@@ -59,19 +52,7 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
             holder.mCbx.setSelected(false);
         }
 
-        if (file.getPath().endsWith("xls") || file.getPath().endsWith("xlsx")) {
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_excel);
-        } else if (file.getPath().endsWith("doc") || file.getPath().endsWith("docx")){
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_word);
-        } else if (file.getPath().endsWith("ppt") || file.getPath().endsWith("pptx")){
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_ppt);
-        } else if (file.getPath().endsWith("pdf")){
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_pdf);
-        } else if (file.getPath().endsWith("txt")){
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_txt);
-        } else {
-            holder.mIvIcon.setImageResource(R.drawable.qwer);
-        }
+        holder.mIvIcon.setImageResource(R.drawable.qwer);
 
         holder.mCbx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,20 +77,6 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
                 }
             }
         });
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Uri uri = Uri.parse("file://" + file.getPath());
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setDataAndType(uri, "audio/mp3");
-//                if (Util.detectIntent(mContext, intent)) {
-//                    mContext.startActivity(intent);
-//                } else {
-//                    Toast.makeText(mContext, "No Application exists for audio!", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
     }
 
     @Override
