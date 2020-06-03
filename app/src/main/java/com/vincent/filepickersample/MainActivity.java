@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent4.putExtra(Constant.MAX_NUMBER, 9);
                 intent4.putExtra(IS_NEED_FOLDER_LIST, true);
                 intent4.putExtra(NormalFilePickActivity.SUFFIX,
-                        new String[] {"xlsx", "xls", "doc", "dOcX", "ppt", ".pptx", "pdf"});
+                        new String[] {"torrent", "xls", "doc", "dOcX", "ppt", ".pptx", "pdf"});
                 startActivityForResult(intent4, Constant.REQUEST_CODE_PICK_FILE);
                 break;
         }

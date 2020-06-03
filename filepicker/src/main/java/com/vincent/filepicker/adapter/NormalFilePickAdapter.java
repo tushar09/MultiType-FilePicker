@@ -70,7 +70,7 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
         } else if (file.getPath().endsWith("txt")){
             holder.mIvIcon.setImageResource(R.drawable.vw_ic_txt);
         } else {
-            holder.mIvIcon.setImageResource(R.drawable.vw_ic_file);
+            holder.mIvIcon.setImageResource(R.drawable.qwer);
         }
 
         holder.mCbx.setOnClickListener(new View.OnClickListener() {
