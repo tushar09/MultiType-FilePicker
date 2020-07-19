@@ -82,7 +82,10 @@ public class FileLoaderCallbacks implements LoaderManager.LoaderCallbacks<Cursor
                 mLoader = new AudioLoader(context.get());
                 break;
             case TYPE_FILE:
-                mLoader = new FileLoader(context.get());
+                if(mLoader == null){
+                    mLoader = new FileLoader(context.get());
+                }
+
                 break;
         }
 
