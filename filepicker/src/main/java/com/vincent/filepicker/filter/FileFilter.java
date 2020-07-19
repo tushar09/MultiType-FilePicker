@@ -36,9 +36,7 @@ public class FileFilter {
                 new FileLoaderCallbacks(activity, callback, TYPE_AUDIO));
     }
 
-    public static void getFiles(FragmentActivity activity,
-                                FilterResultCallback<NormalFile> callback, String[] suffix){
-        activity.getSupportLoaderManager().initLoader(3, null,
-                new FileLoaderCallbacks(activity, callback, TYPE_FILE, suffix));
+    public static void getFiles(FragmentActivity activity, FilterResultCallback<NormalFile> callback, String[] suffix){
+        activity.getSupportLoaderManager().initLoader(3, null, new FileLoaderCallbacks(activity, callback, TYPE_FILE, suffix));
     }
 }

@@ -3,6 +3,8 @@ package com.vincent.filepicker.filter.callback;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
@@ -52,7 +54,7 @@ public class FileLoaderCallbacks implements LoaderManager.LoaderCallbacks<Cursor
 
     private int mType = TYPE_IMAGE;
     private String[] mSuffixArgs;
-    private CursorLoader mLoader;
+    private static CursorLoader mLoader;
     private String mSuffixRegex;
 
     public FileLoaderCallbacks(Context context, FilterResultCallback resultCallback, int type) {
@@ -82,8 +84,12 @@ public class FileLoaderCallbacks implements LoaderManager.LoaderCallbacks<Cursor
                 mLoader = new AudioLoader(context.get());
                 break;
             case TYPE_FILE:
+                Log.e("mLoader", "case");
                 if(mLoader == null){
+                    Log.e("mLoader", "null");
                     mLoader = new FileLoader(context.get());
+                }else {
+                    Log.e("mLoader", "else");
                 }
 
                 break;
